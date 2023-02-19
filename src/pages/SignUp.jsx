@@ -22,7 +22,7 @@ export default function SignUp() {
         setFormData((prevState)=> ({
             ...prevState,
             [e.target.id]: e.target.value,
-        }))
+        }));
     }
     async function onSubmit(e){
         e.preventDefault()
@@ -41,7 +41,7 @@ export default function SignUp() {
 
             await setDoc(doc(db, "users", user.uid), formDataCopy);
             toast.success("Sign up was successful")
-            navigate("/");
+            //navigate("/");
         } catch (error) {
             toast.error("Something went wrong with the registration")
         }

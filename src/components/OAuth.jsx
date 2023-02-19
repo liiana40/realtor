@@ -9,14 +9,14 @@ export default function OAuth() {
   const navigate = useNavigate();
   async function onGoogleClick() {
     try {
-      const auth = getAuth()
-      const provider = new GoogleAuthProvider()
-      const result = await signInWithPopup(auth, provider)
-      const user = result.user
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
      
       //check for the user
       const docRef = doc(db, "users", user.uid)
-      const docSnap = await getDoc(docRef)
+      const docSnap = await getDoc(docRef);
 
       if (!docSnap.exists()) {
         await setDoc(docRef, {
