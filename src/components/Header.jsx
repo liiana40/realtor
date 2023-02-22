@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 
@@ -10,19 +10,19 @@ export default function Header() {
     useEffect(()=> {
       onAuthStateChanged(auth, (user)=> {
         if(user) {
-          setPageState('Profile')
+          setPageState('Profile');
         } else {
-          setPageState('Sign in')
+          setPageState('Sign in');
         }
-      })
+      });
     }, [auth])
     function pathMatchRoute(route) {
         if (route === location.pathname) {
-            return true
+            return true;
         }
     }
   return (
-    <div className='bg-white border-b shadow-sm sticky top-0 z-50'>
+    <div className='bg-white border-b shadow-sm sticky top-0 z-40'>
         <header className='flex justify-between items-center px-3 max-w-6xl mx-auto'>
             <div>
                 <img src='https://liiana40.github.io/QC-Care-IT/assets/images/qc.svg' alt='logo' 
@@ -57,5 +57,5 @@ export default function Header() {
             </div>
         </header>
     </div>
-  )
+  );
 }
