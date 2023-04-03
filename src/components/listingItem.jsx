@@ -2,7 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Spinner from "../components/Spinner";
+import Spinner from "./Spinner";
 import { db } from "../firebase";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
@@ -21,7 +21,7 @@ import {
   FaChair,
 } from "react-icons/fa";
 import { getAuth } from "firebase/auth";
-import Contact from "../components/Contact";
+import Contact from "./Contact";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 export default function Listing() {

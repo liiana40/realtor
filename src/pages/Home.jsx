@@ -1,4 +1,4 @@
-import ListingItem from "../components/listingItem";
+import ListingItem from "../components/ListingItem";
 import { Link } from "react-router-dom";
 import { collection, getDoc, getDocs, limit, orderBy, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
